@@ -30,6 +30,9 @@ import org.pmw.tinylog.writers.Writer;
 /**
  * Configuration for {@link org.pmw.tinylog.Logger Logger}. Use {@link org.pmw.tinylog.Configurator Configurator} to
  * create a configuration.
+ * <br><br>
+ * COMMENT: This class has been taken from the Tinylog (v1.3.1) and modified to support access
+ * to the writer specific levels for singlelevel-cw. All modifications are tagged with "--- manually added ---".
  */
 public final class Configuration {
 

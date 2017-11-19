@@ -12,7 +12,7 @@ import org.pmw.tinylog.writers.PropertiesSupport;
 import org.pmw.tinylog.writers.Property;
 import org.pmw.tinylog.writers.Writer;
 
-/**  Extension of the the tinylog console writer enabling to print the level specified in the config.
+/**  Extension of the the tinylog ConsoleWriter enabling to print the level specified in the config.
  * @author Tobias R. Mayer (trmayer@me.com)
  */
 @PropertiesSupport(name = "singlelevelconsole", properties = 
@@ -31,7 +31,6 @@ public final class SinglelevelConsoleWriter implements Writer {
 
 	// --------------------------------------------------------------------
 
-	/** */
 	public SinglelevelConsoleWriter() {
 		err = System.err;
 		out = System.out;
@@ -58,9 +57,9 @@ public final class SinglelevelConsoleWriter implements Writer {
 
 	// --------------------------------------------------------------------
 
-	/**
-	 * @param stream
-	 *            Name of system print stream for outputting log entries ("out" for {@link System.out} or "err" for {@link System.err})
+	/** 
+	 * @param stream Name of system print stream for outputting log entries ("out" for {@link System.out} or "err" for {@link System.err})
+	 * @param singlelevel if the writer shall be restricted to his log level 
 	 */
 	SinglelevelConsoleWriter(final String stream, final boolean singlelevel) {
 
