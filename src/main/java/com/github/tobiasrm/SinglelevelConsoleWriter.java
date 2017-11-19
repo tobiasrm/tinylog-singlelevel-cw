@@ -15,7 +15,7 @@ import org.pmw.tinylog.writers.Writer;
 /**  Extension of the the tinylog ConsoleWriter enabling to print the level specified in the config.
  * @author Tobias R. Mayer (trmayer@me.com)
  */
-@PropertiesSupport(name = "singlelevelconsole", properties = 
+@PropertiesSupport(name = "singlelevel-console", properties = 
 {
 		@Property(name = "stream", type = String.class, optional = true),
 		@Property(name = "singlelevel", type = boolean.class, optional = true) 
