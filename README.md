@@ -7,8 +7,8 @@ Its main objective is a loglevel specific colored output. However, it is also he
 Singlelevel-CW extends the Tinylog `ConsoleWriter` with the `singlelevel-console` parameter to restrict log outputs to the corresponding level. Config definition: 
 
 ```  
- tinylog.writer	 				= singlelevel-console 
- tinylog.writer.singlelevel		= <true|false>
+ tinylog.writer              = singlelevel-console 
+ tinylog.writer.singlelevel  = <true|false>
 ``` 
 
 ## Colored logs
