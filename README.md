@@ -1,5 +1,5 @@
 # Tinylog Singlelevel CW
-**A Tinylog console writer extension to restrict writers to single log levels.**
+**A [Tinylog](http://www.tinylog.org) console writer extension to restrict writers to single log levels.**
 
 Its main objective is a loglevel specific colored output. However, it is also helpful for debugging, e.g. only printing out trace logs and omitting the rest.
 
