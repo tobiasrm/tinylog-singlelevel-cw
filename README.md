@@ -25,7 +25,7 @@ You can reproduce the colored log demo by running `mvn clean install` and then `
 
 ## Comments
 - **Patched Configuration class**. Singlelevel-CW implements the Tinylog Writer interface and is based on the Tinylog ConsoleWriter implementation. 
-However, as the original tinylog `Configuration` does not provide the access on writer specific levels, a patch is provided with this project. The modifications are highlighted in the screenshots [one](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_1.png?raw=true) and [two](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_2.png?raw=true). You're invited to diff with the original version.. You're invited to diff with the original version.
+However, as the original tinylog `Configuration` does not provide the access on writer specific levels, a patch is provided with this project. The modifications are highlighted in the screenshots [one](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_1.png?raw=true) and [two](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_2.png?raw=true). Of course, feel invited to diff with the original version. 
 - **Versioning**. The versioning (see [pom.xml](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/pom.xml)) uses the original Tinylog versions, e.g. singlelevel-cw in v1.3.1 uses Tinylog v1.3.1.
 
 
