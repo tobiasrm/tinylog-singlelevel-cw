@@ -21,7 +21,18 @@ Singlelevel-cw comes with default colorization as shown below. See the correspon
 You can reproduce the colored log demo by running `mvn clean install` and then `java -jar target/tinylog-singlelevel-1.3.1-executable.jar` (in an environment supporting colors via ACII espace characters, e.g. bash terminal).  
  
 ## Maven artifact
-*in preparation*
+Add the following dependency to use the singlelevel-cw in your maven project:
+
+```
+<dependency>
+	<groupId>com.github.tobiasrm</groupId>
+	<artifactId>tinylog-singlelevel-cw</artifactId>
+	<version>1.3.1</version>
+</dependency>
+```
+
+Note that the singlelevel-cw [tinylog.properties](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/src/main/resources/tinylog.properties) is used is used by default (with colored output as in the screenshot) if no config is provided. 
+For individualization, provide the tinylog.properties in the classpath (path src/main/resources/) or specify it via '-D' parameter. See [Tinylog properties file documentation](http://www.tinylog.org/configuration#file) for details.
 
 ## Comments
 - **Patched Configuration class**. Singlelevel-CW implements the Tinylog Writer interface and is based on the Tinylog ConsoleWriter implementation. 
