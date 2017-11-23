@@ -1,24 +1,22 @@
 # Tinylog Singlelevel CW
 **A [Tinylog](http://www.tinylog.org) console writer extension to restrict writers to single log levels.**
-
-Its main objective is a loglevel specific colored output. However, it is also helpful for debugging, e.g. only printing out trace logs and omitting the rest.
+ 
 
 ## Features
-Singlelevel-CW extends the Tinylog `ConsoleWriter` with the `singlelevel-console` parameter to restrict log outputs to the corresponding level. Config definition: 
+Singlelevel-CW extends Tinylog with the `singlelevel-console` parameter to restrict log outputs to the corresponding level. This supports debugging by defining multiple writers and print exactly the log-levels you need (e.g. traces, warnings, and errors).
 
-```  
- tinylog.writer              = singlelevel-console 
- tinylog.writer.singlelevel  = <true|false>
+
+```   
+   tinylog.writer              = singlelevel-console 
+   tinylog.writer.singlelevel  = <true|false>
 ``` 
 
-## Colored logs
-With a witer being restricted to one level, you can colorize the log format (see [Tinylog Logging Format](http://www.tinylog.org/configuration#format)) of the level-specific writer using [ASCII escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code). It gives you per-level flexibility (e.g. printing warnings in completely in yellow, errors in red). 
-
-Singlelevel-cw comes with default colorization as shown below. See the corresponding [tinylog.properties](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/src/main/resources/tinylog.properties) as config example.
-
+## Example
+The following screenshot shows the example where messages are logged to all log-levels (see Main.java) but the singlelevel-cw prints only the log-levels trace, warn and error are printed (here in Eclipse using the 'err ' stream for warn/error). This is realized by defining multiple writers, one per log-level and all restricted to the corresponding level, but activating only the needed ones.
+  
 ![](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/screenshot.png?raw=true)
 
-You can reproduce the colored log demo by running `mvn clean install` and then `java -jar target/tinylog-singlelevel-1.3.1-executable.jar` (in an environment supporting colors via ACII espace characters, e.g. bash terminal).  
+You can reproduce the example by running `mvn clean install` and then `java -jar target/tinylog-singlelevel-cw-1.3.1-executable.jar`.
  
 ## Maven artifact
 Add the following dependency to use the singlelevel-cw in your maven project:
@@ -31,12 +29,15 @@ Add the following dependency to use the singlelevel-cw in your maven project:
 </dependency>
 ```
 
-Note that the singlelevel-cw [tinylog.properties](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/src/main/resources/tinylog.properties) is used is used by default (with colored output as in the screenshot) if no config is provided. 
-For individualization, provide the tinylog.properties in the classpath (path src/main/resources/) or specify it via '-D' parameter. See [Tinylog properties file documentation](http://www.tinylog.org/configuration#file) for details.
-
 ## Comments
+- **Versioning**. The versioning (see [pom.xml](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/pom.xml)) uses the original Tinylog versions, e.g. tinylog-singlelevel-cw in version 1.3.1 uses Tinylog v1.3.1. If needed, you may simply exclude it and use another Tinylog version.
 - **Patched Configuration class**. Singlelevel-CW implements the Tinylog Writer interface and is based on the Tinylog ConsoleWriter implementation. 
 However, as the original tinylog `Configuration` does not provide the access on writer specific levels, a patch is provided with this project. The modifications are highlighted in the screenshots [one](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_1.png?raw=true) and [two](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_2.png?raw=true). Of course, feel invited to diff with the original version. 
-- **Versioning**. The versioning (see [pom.xml](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/pom.xml)) uses the original Tinylog versions, e.g. singlelevel-cw in v1.3.1 uses Tinylog v1.3.1.
 
+## Other Tinylog writer extensions
+See also my other Tinylog writer extension projects:
+
+-  [tinylog-coloredconsole](https://github.com/tobiasrm/tinylog-coloredconsole) for colored log-level and arbitrary source-code generated data through custom tags.
+- [tinylog-tagging-filewriter](https://github.com/tobiasrm/tinylog-tagging-filewriter) extension to remove custom strings (e.g. the tinylog-coloredconsole custom tags) before writing to file (based on filewriter)
+- [tinylog-tagging-rollingfilewriter](https://github.com/tobiasrm/tinylog-tagging-rollingfilewriter) extension to remove custom strings (e.g. the tinylog-coloredconsole custom tags) before writing to file (based on rollingfilewriter)
 
