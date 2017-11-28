@@ -1,9 +1,9 @@
-# Tinylog Singlelevel CW
-**A [Tinylog](http://www.tinylog.org) console writer extension to restrict writers to single log levels.**
+# tinylog singlelevel cw
+**A [tinylog](http://www.tinylog.org) console writer extension to restrict writers to single log levels.**
  
 
 ## Features
-Singlelevel-CW extends Tinylog with the `singlelevel-console` parameter to restrict log outputs to the corresponding level. This supports debugging by defining multiple writers and print exactly the log-levels you need (e.g. traces, warnings, and errors).
+The singlelevel-cw extends tinylog with the `singlelevel-console` parameter to restrict log outputs to the corresponding level. This supports debugging by defining multiple writers and print exactly the log-levels you need (e.g. traces, warnings, and errors).
 
 
 ```   
@@ -30,12 +30,12 @@ Add the following dependency to use the singlelevel-cw in your maven project:
 ```
 
 ## Comments
-- **Versioning**. The versioning (see [pom.xml](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/pom.xml)) uses the original Tinylog versions, e.g. tinylog-singlelevel-cw in version 1.3.1 uses Tinylog v1.3.1. If needed, you may simply exclude it and use another Tinylog version.
-- **Patched Configuration class**. Singlelevel-CW implements the Tinylog Writer interface and is based on the Tinylog ConsoleWriter implementation. 
+- **Versioning**. The versioning (see [pom.xml](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/pom.xml)) uses the original tinylog versions, e.g. tinylog-singlelevel-cw in version 1.3.1 uses tinylog v1.3.1. If needed, you may simply exclude it and use another tinylog version.
+- **Patched Configuration class**. The singlelevel-cw implements the tinylog writer interface and is based on the tinylog consolewriter implementation. 
 However, as the original tinylog `Configuration` does not provide the access on writer specific levels, a patch is provided with this project. The modifications are highlighted in the screenshots [one](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_1.png?raw=true) and [two](https://github.com/tobiasrm/tinylog-singlelevel-cw/blob/master/files/configuration_mod_2.png?raw=true). Of course, feel invited to diff with the original version. 
 
-## Other Tinylog writer extensions
-See also my other Tinylog writer extension projects:
+## Other tinylog writer extensions
+See also my other tinylog writer extension projects:
 
 -  [tinylog-coloredconsole](https://github.com/tobiasrm/tinylog-coloredconsole) for colored log-level and arbitrary source-code generated data through custom tags.
 - [tinylog-tagging-filewriter](https://github.com/tobiasrm/tinylog-tagging-filewriter) extension to remove custom strings (e.g. the tinylog-coloredconsole custom tags) before writing to file (based on filewriter)
